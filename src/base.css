@@ -1,0 +1,25 @@
+/* Here are all the css variables used in the projects + other general stuff  */
+/* Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Vars */
+:root {
+  /* Fonts */
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+
+  --c-oos-gray: #8d8f9a;
+  --c-size-gray: #a6a6a6;
+  --c-size-ok: #292929;
+  --c-size-bg: #1d1f22;
+  --c-primary: #5ece7b;
+  --c-text: #1d1f22;
+}
+.link-active {
+  color: var(--c-primary);
+}

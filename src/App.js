@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Route, Switch } from 'react-router'
+import Layout from './components/layout/Layout'
+import NotFound from './components/NotFound'
+import PLP from './components/category/PLP'
+import PDP from './components/category/PDP'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <>
+        <Layout />
+        <Switch>
+          <Route path='/' exact>
+            <PLP />
+          </Route>
+          <Route path='/women' exact>
+            <PLP />
+          </Route>
+          <Route path='/men' exact>
+            <PLP />
+          </Route>
+          <Route path='/kids' exact>
+            <PLP />
+          </Route>
+          <Route path='/product' exact>
+            <PDP />
+          </Route>
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
+      </>
+    )
+  }
 }
-
-export default App;
