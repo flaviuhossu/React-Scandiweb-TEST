@@ -9,6 +9,7 @@ import cartIcon from '../../assets/empty_cart.svg'
 import arrowDown from '../../assets/arrow_down.svg'
 
 import { getCurrencies } from '../../redux/actions/currencies.action'
+import { getProducts } from '../../redux/actions/products.action'
 import { connect } from 'react-redux'
 
 class Navbar extends Component {
@@ -19,29 +20,34 @@ class Navbar extends Component {
           <div className='navbar__links-container'>
             <ul>
               <li className='women-links '>
-                <Link to='/women'>
-                  <a href='#'>women</a>
+                <Link to='/clothing' onClick={''}>
+                  <a href='#'>clothing</a>
                 </Link>
                 <div className='women-links--slate'></div>
               </li>
 
               <li className='men-links'>
-                <Link to='/men'>
-                  <a href='#'>men</a>
+                <Link to='/tech'>
+                  <a href='#'>tech</a>
                 </Link>
                 <div className='men-links--slate'></div>
               </li>
 
-              <li className='kids-links'>
+              {/* <li className='kids-links'>
                 <Link to='/kids'>
                   <a href='#'>kids</a>
                 </Link>
                 <div className='kids-links--slate'></div>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className='brand'>
-            <Link to='/'>
+            <Link
+              to='/'
+              onClick={() => {
+                this.props.getProducts()
+              }}
+            >
               <a href='#'>
                 <img src={logo} class='brand-logo' alt='brand-logo' />
               </a>
@@ -79,12 +85,8 @@ const mapStateToProps = (state) => {
     currency: state.currency,
   }
 }
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     getCurrencies: () => dispatch(getCurrencies()),
-//   }
-// }
-export default connect(mapStateToProps, { getCurrencies })(Navbar)
+
+export default connect(mapStateToProps, { getCurrencies, getProducts })(Navbar)
 
 // STYLED COMPONENTS
 

@@ -23,3 +23,8 @@
 .link-active {
   color: var(--c-primary);
 }
+.out-of-stock {
+  display: absolute;
+  background: #fff;
+  opacity: 0.5;
+}
